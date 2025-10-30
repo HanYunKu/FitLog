@@ -1,0 +1,38 @@
+# macOS / OS-generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node.js
+node_modules/
+.env
+.env.*.local
+
+# Build output
+dist/
+build/
+web-build/
+
+# Expo
+.expo/
+.expo-shared/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# AutoGit / Devcontainers
+.autogit/
+.devcontainer/
+
+# GitHub Actions
+.github/workflows/
+
+# Yarn
+yarn.lock
