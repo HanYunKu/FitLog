@@ -7,8 +7,8 @@ type Workout = {
     durationMinutes?: number;
     details?: string;
     imageUrl?: string;
-    question?: string; // fallback from old flashcards
-    answer?: string;   // fallback
+    question?: string;
+    answer?: string;
     isFavorite: boolean;
 };
 
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export default function CardItem({ workout, onToggleFavorite }: Props) {
-    // extra safety in case something is weird
+
     if (!workout) {
         return null;
     }

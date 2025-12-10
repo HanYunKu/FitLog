@@ -18,7 +18,6 @@ type Workout = {
     details?: string;
     imageUrl?: string;
 
-    // old fields (still used by current UI)
     question?: string;
     answer?: string;
 

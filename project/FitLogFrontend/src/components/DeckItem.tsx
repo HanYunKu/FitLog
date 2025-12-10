@@ -2,11 +2,11 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 
 const COLORS = [
-    "#FFEECC", // soft orange
-    "#D6F5D6", // soft green
-    "#DDEBFF", // soft blue
-    "#FFE1F0", // soft pink
-    "#FFF8CC", // soft yellow
+    "#FFEECC",
+    "#D6F5D6",
+    "#DDEBFF",
+    "#FFE1F0",
+    "#FFF8CC",
 ];
 
 type Props = {

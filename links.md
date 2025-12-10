@@ -59,6 +59,7 @@ Record your app running on a **real phone** and upload it to **Google Drive**.
 
 | # | Description | Link |
 |---|--------------|------|
-| 1 | **Installable Android Build** | [Paste your EAS build link here](https://expo.dev/artifacts/eas/...) |
-| 2 | **Backend URL** | [Paste your backend base URL here](https://your-app-name.onrender.com/) |
-| 3 | **Demo Video (Google Drive)** | [Paste your video link here](https://drive.google.com/...) |
+| 1 | **Installable Android Build** | [https://expo.dev/accounts/han-yun/projects/FitLog/builds/08284515-f2c1-449d-82f0-fb9531af9b09](https://expo.dev/artifacts/eas/...) |
+| 2 | **Backend URL** | [https://fitlog-0rqy.onrender.com](https://your-app-name.onrender.com/) |
+| 3 | **Demo Video (Google Drive)** | [https://drive.google.com/file/d/16ZzPQ3igZlEcJBmUK9vjWdFp8Ks6uVoe/view?usp=sharing](https://drive.google.com/...) |
+  

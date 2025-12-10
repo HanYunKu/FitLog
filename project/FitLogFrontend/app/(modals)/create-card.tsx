@@ -21,13 +21,11 @@ export default function CreateCardModal() {
     const { deckId } = useLocalSearchParams<{ deckId: string }>();
     const router = useRouter();
 
-    // 🧠 Workout fields
     const [muscleGroup, setMuscleGroup] = useState("");
-    const [duration, setDuration] = useState(""); // string for input
+    const [duration, setDuration] = useState("");
     const [details, setDetails] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
-    // 📷 Camera permission & state
     const [permission, requestPermission] = useCameraPermissions();
     const [showCamera, setShowCamera] = useState(false);
     const [facing, setFacing] = useState<"back" | "front">("back");
@@ -40,7 +38,6 @@ export default function CreateCardModal() {
 
     const handleOpenCamera = async () => {
         if (!permission) {
-            // permission object not loaded yet
             return;
         }
 
@@ -84,7 +81,6 @@ export default function CreateCardModal() {
         const trimmedDuration = duration.trim();
         const trimmedImageUrl = imageUrl.trim();
 
-        // basic validation: require at least something
         if (!trimmedMuscle && !trimmedDetails && !trimmedDuration && !trimmedImageUrl) {
             Alert.alert(
                 "Error",
@@ -93,7 +89,6 @@ export default function CreateCardModal() {
             return;
         }
 
-        // parse duration into a number if provided
         let durationMinutes: number | undefined = undefined;
         if (trimmedDuration) {
             const n = Number(trimmedDuration);
@@ -117,7 +112,6 @@ export default function CreateCardModal() {
                 details: trimmedDetails || undefined,
                 imageUrl: trimmedImageUrl || undefined,
 
-                // backwards compatibility with older fields
                 question: trimmedMuscle || undefined,
                 answer: trimmedDetails || undefined,
             };

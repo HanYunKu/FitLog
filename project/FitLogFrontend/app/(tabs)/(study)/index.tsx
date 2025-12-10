@@ -71,15 +71,11 @@ export default function StudyScreen() {
 
             const updated: Workout = await res.json();
 
-            // Either remove it from the list when unfavorited:
+
             setWorkouts((prev) =>
                 prev.filter((w) => w._id !== updated._id || updated.isFavorite)
             );
 
-            // Or, if you prefer to keep it and just update the flag:
-            // setWorkouts((prev) =>
-            //     prev.map((w) => (w._id === updated._id ? updated : w))
-            // );
         } catch (err) {
             console.error("Error toggling favorite (favorites tab):", err);
         }

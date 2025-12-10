@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import Workout from "../models/Workout.js";
 
-// GET all workouts for a given day (deckId)
 export const getCardsByDeck = async (req, res) => {
     try {
         const { deckId } = req.params;
@@ -18,18 +17,17 @@ export const getCardsByDeck = async (req, res) => {
     }
 };
 
-// CREATE a workout inside a day
 export const createCard = async (req, res) => {
     try {
         const { deckId } = req.params;
 
-        // New workout fields from the body
+
         const {
             muscleGroup,
             durationMinutes,
             details,
             imageUrl,
-            // keep old fields for backwards compatibility
+
             question,
             answer,
         } = req.body;
@@ -53,15 +51,15 @@ export const createCard = async (req, res) => {
         }
 
         const workout = await Workout.create({
-            dayId: deckId,   // new link
-            deckId,          // legacy link so old code still works
+            dayId: deckId,
+            deckId,
 
             muscleGroup,
             durationMinutes,
             details,
             imageUrl,
 
-            // keep old fields if frontend still sends them
+
             question,
             answer,
         });
@@ -97,7 +95,6 @@ export const updateCard = async (req, res) => {
     }
 };
 
-// DELETE a workout
 export const deleteCard = async (req, res) => {
     try {
         const { cardId } = req.params;
@@ -114,7 +111,6 @@ export const deleteCard = async (req, res) => {
     }
 };
 
-// TOGGLE favorite (image will be added later)
 export const toggleFavorite = async (req, res) => {
     try {
         const { cardId } = req.params;
@@ -134,7 +130,6 @@ export const toggleFavorite = async (req, res) => {
     }
 };
 
-// GET all favorite workouts
 export const getFavoriteCards = async (req, res) => {
     try {
         const workouts = await Workout.find({ isFavorite: true }).sort({

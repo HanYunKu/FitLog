@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Pressable, StyleSheet, Text } from "react-native";
 
 export default function FAB({ onPress }: { onPress: () => void }) {

@@ -2,18 +2,16 @@ import mongoose from "mongoose";
 import Day from "../models/Day.js";
 import Workout from "../models/Workout.js";
 
-// GET /api/decks  (later we'll rename this to days)
 export const getDecks = async (req, res) => {
     try {
         const days = await Day.find().sort({ createdAt: -1 });
-        res.json(days); // ✅ send the days we just fetched
+        res.json(days);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Server error" });
     }
 };
 
-// POST /api/decks
 export const createDeck = async (req, res) => {
     try {
         const { title } = req.body;
@@ -30,7 +28,6 @@ export const createDeck = async (req, res) => {
     }
 };
 
-// GET /api/decks/:deckId
 export const getDeckById = async (req, res) => {
     try {
         const { deckId } = req.params;
@@ -51,7 +48,6 @@ export const getDeckById = async (req, res) => {
     }
 };
 
-// DELETE /api/decks/:deckId
 export const deleteDeck = async (req, res) => {
     try {
         const { deckId } = req.params;
@@ -65,8 +61,6 @@ export const deleteDeck = async (req, res) => {
             return res.status(404).json({ error: "Day not found" });
         }
 
-        // still using deckId here because Card schema still has deckId;
-        // we'll change it later when we rename Card -> Workout.
         await Card.deleteMany({ deckId });
 
         res.json({ message: "Day and its workouts deleted" });
