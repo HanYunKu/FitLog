@@ -1,9 +1,0 @@
-{
-  "runOnStart": true,
-  "updateInterval": 10,
-  "logging": false,
-  "silent": true,
-  "commitMessage": "--- Auto Save ---",
-  "locale": "en-US",
-  "timeZone": "America/New_York"
-}
