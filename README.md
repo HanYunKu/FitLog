@@ -1,5 +1,5 @@
 ## Overview
-FitLog is a full-stack application for tacking workouts and diet entries.
+FitLog is a full-stack application for tracking workouts and diet entries.
 
 ## Features
 - Log daily workouts with exercise details
